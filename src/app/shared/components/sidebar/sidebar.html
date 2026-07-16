@@ -1,0 +1,30 @@
+<aside class="sidebar">
+  <div class="sidebar__logo">
+    <mat-icon class="sidebar__logo-icon">hub</mat-icon>
+    <span class="sidebar__logo-text">FlowSphere</span>
+  </div>
+
+  <nav class="sidebar__nav">
+    @for (item of navItems; track item.route) {
+      
+        class="sidebar__nav-item"
+        [routerLink]="item.route"
+        routerLinkActive="sidebar__nav-item--active"
+      >
+        <mat-icon class="sidebar__nav-icon">{{ item.icon }}</mat-icon>
+        <span class="sidebar__nav-label">{{ item.label }}</span>
+        @if (item.badge) {
+          <span class="sidebar__nav-badge">{{ item.badge }}</span>
+        }
+    
+    }
+  </nav>
+
+  <div class="sidebar__user">
+    <div class="sidebar__user-avatar">AJ</div>
+    <div class="sidebar__user-info">
+      <span class="sidebar__user-name">Audrey Johnson</span>
+      <span class="sidebar__user-role">Administrator</span>
+    </div>
+  </div>
+</aside>
